@@ -593,6 +593,13 @@ pub fn paste(text: String, app_handle: AppHandle) -> Result<(), String> {
     let paste_method = settings.paste_method;
     let paste_delay_ms = settings.paste_delay_ms;
 
+    // Prepend leading space if setting is enabled
+    let text = if settings.prepend_leading_space {
+        format!(" {}", text)
+    } else {
+        text
+    };
+
     // Append trailing space if setting is enabled
     let text = if settings.append_trailing_space {
         format!("{} ", text)

@@ -452,6 +452,10 @@
         "label": "Append Trailing Space",
         "description": "Add a space after pasted transcription"
       },
+      "prependLeadingSpace": {
+        "label": "Prepend Leading Space",
+        "description": "Add a space before pasted transcription"
+      },
       "keyboardImplementation": {
         "title": "Keyboard Implementation",
         "description": "Choose the keyboard shortcut backend.",
