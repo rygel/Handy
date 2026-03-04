@@ -870,4 +870,11 @@ mod tests {
         assert!(!settings.auto_submit);
         assert_eq!(settings.auto_submit_key, AutoSubmitKey::Enter);
     }
+
+    #[test]
+    fn default_settings_space_options() {
+        let settings = get_default_settings();
+        assert!(!settings.prepend_leading_space);
+        assert!(!settings.append_trailing_space);
+    }
 }
