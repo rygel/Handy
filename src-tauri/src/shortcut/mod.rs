@@ -1032,7 +1032,6 @@ pub fn change_mute_while_recording_setting(app: AppHandle, enabled: bool) -> Res
 }
 
 #[tauri::command]
-#[tauri::command]
 #[specta::specta]
 pub fn change_append_trailing_space_setting(app: AppHandle, enabled: bool) -> Result<(), String> {
     let mut settings = settings::get_settings(&app);
