@@ -593,6 +593,8 @@ pub fn paste(text: String, app_handle: AppHandle) -> Result<(), String> {
     let paste_method = settings.paste_method;
     let paste_delay_ms = settings.paste_delay_ms;
 
+    let original_text = text.clone();
+
     // Prepend leading space if setting is enabled
     let text = if settings.prepend_leading_space {
         format!(" {}", text)
@@ -608,8 +610,8 @@ pub fn paste(text: String, app_handle: AppHandle) -> Result<(), String> {
     };
 
     info!(
-        "Using paste method: {:?}, delay: {}ms",
-        paste_method, paste_delay_ms
+        "Original text: '{}', Modified text: '{}', Prepend leading space: {}, Append trailing space: {}, Using paste method: {:?}, delay: {}ms",
+        original_text, text, settings.prepend_leading_space, settings.append_trailing_space, paste_method, paste_delay_ms
     );
 
     // Get the managed Enigo instance
